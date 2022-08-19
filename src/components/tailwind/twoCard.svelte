@@ -1,8 +1,7 @@
 <script>
   export let styleProps;
-
-
 </script>
+
 <section class="two-card-col flex flex-col flex-wrap justify-center gap-8 my-9" style="{ styleProps }">
 
   <div class="flex flex-col text-center justify-center">

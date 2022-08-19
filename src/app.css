@@ -78,11 +78,8 @@ html {
     margin-left: 3rem;
   }
 
-  .tailwind-config {
-
-    .hljs-string:nth-of-type(3n+1) {
-      margin-left: 6.5rem;
-    }
+  .tailwind-config .hljs-string:nth-of-type(3n+1) {
+    margin-left: 6.5rem;
   }
 
   pre {
