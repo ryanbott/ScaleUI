@@ -1,6 +1,5 @@
 <script>
 	// import { page } from '$app/stores';
-	// import logo from './svelte-logo.svg';
   import { onMount, afterUpdate } from 'svelte';
 
   import DarkMode from "svelte-dark-mode";
@@ -33,7 +32,7 @@
 
 
     <button
-      class="button bg-3 text-1 p-2 rounded-xl"
+      class="button bg-3 text-1 p-2 rounded-xl font-mono"
       on:click={handleClick}
     >
       Click me

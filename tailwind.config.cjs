@@ -5,6 +5,9 @@ module.exports = {
   theme: {
     extend: {
 
+      fontFamily: {
+        mono: [' var(--font-mono) '],
+      },
 
       fontSize: {
         'scale-1': 'var(--scale-1)',

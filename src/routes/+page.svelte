@@ -265,7 +265,7 @@ theme: {
         </div>
         <div class="fluid-type__button-container">
           <button
-            class="button p-4 text-scale-3"
+            class="button p-4 text-scale-3 font-mono"
             on:click={() => calcFluidValues(fluidMinFont, fluidMaxFont)}
           >
             Calculate new Fluid Prop
@@ -282,7 +282,7 @@ theme: {
     </div>
 
     <button
-      class="button p-4 mx-4 text-scale-3"
+      class="button p-4 mx-4 text-scale-3 font-mono"
       on:click={calcSizeValues}>
       Calculate Values
     </button>
