@@ -37,7 +37,7 @@
 
 <svelte:head>
 	<title>ScaleUI</title>
-	<meta name="description" content="About this app" />
+	<meta name="description" content="A Fluid Type Scale system for Typography and Layouts." />
   {@html HighlightTheme}
 </svelte:head>
 
