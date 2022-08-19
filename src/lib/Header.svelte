@@ -37,10 +37,6 @@
   // $: document.body.className = theme;
 
 
-  function handleClick() {
-		alert('clicked')
-	}
-
 </script>
 
 <header class="px-scale-3">
@@ -48,15 +44,6 @@
     <div class="logo flex align-center my-auto">
       <a class="text-1 px-2 font-bold" href="/">ScaleUI</a>
     </div>
-
-
-    <button
-      class="button bg-3 text-1 p-2 rounded-xl font-mono"
-      on:click={handleClick}
-    >
-      Click me
-    </button>
-
 
     <div class="flex">
       <button

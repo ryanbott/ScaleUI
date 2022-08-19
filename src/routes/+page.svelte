@@ -5,18 +5,18 @@
 	import { browser, dev } from '$app/env';
   import { loop_guard } from 'svelte/internal';
 	// import Select from 'svelte-select';
-  // import Highlight from "svelte-highlight";
-  // import HighlightTailwind from "svelte-highlight";
+  import Highlight from "svelte-highlight";
+  import HighlightTailwind from "svelte-highlight";
 
   // import cssVars from 'svelte-css-vars';
-  // import { css, javascript } from "svelte-highlight/languages";
-  // import HighlightTheme from "svelte-highlight/styles/arta";
+  import { css, javascript } from "svelte-highlight/languages";
+  import HighlightTheme from "svelte-highlight/styles/arta";
   // synth-midnight-terminal-dark
   // ros-pine-moon
   // shades-of-purple
   // arta
 
-  // import CodeSnippet from '../components/codeSnippet.svelte';
+  import CodeSnippet from '../components/codeSnippet.svelte';
 
 
   import TailwindGallery from '../components/tailwind/gallery.svelte';
@@ -38,7 +38,7 @@
 <svelte:head>
 	<title>ScaleUI</title>
 	<meta name="description" content="About this app" />
-  <!-- {@html HighlightTheme} -->
+  {@html HighlightTheme}
 </svelte:head>
 
 
@@ -297,6 +297,11 @@ theme: {
       {/each}
     </ul>
 
+
+    <div class="my-8 grid md:grid-cols-2 gap-0 w-full">
+      <CodeSnippet language={css} code={codeCSS} containerClass={'css-custom-properties'} />
+      <CodeSnippet language={javascript} code={codeTailwind} containerClass={'tailwind-config'} />
+    </div>
 
 
 
