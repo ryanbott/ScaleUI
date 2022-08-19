@@ -1,5 +1,5 @@
 
-<div class="bg-blue-300 container">
+<div class="bg-blue-300 container mx-auto">
 
 
   <h1>Welcome to SvelteKit</h1>

@@ -1,14 +1,14 @@
 <script>
 	// import { page } from '$app/stores';
 	// import logo from './svelte-logo.svg';
-  // import { onMount } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
 
   import DarkMode from "svelte-dark-mode";
-  import { afterUpdate } from "svelte";
   let theme;
 
-  afterUpdate(() => {
-    document.body.className = theme; // "dark" or "light"
+  onMount(() => {
+    console.log("theme is: ", document.body.className);
+    document.body.classList = theme || 'light'; // "dark" or "light"
   });
 
   $: switchTheme = theme === "dark" ? "light" : "dark";
@@ -32,7 +32,10 @@
     </div>
 
 
-    <button on:click={handleClick}>
+    <button
+      class="button bg-3 text-1 p-2 rounded-xl"
+      on:click={handleClick}
+    >
       Click me
     </button>
 
@@ -41,12 +44,14 @@
       <DarkMode bind:theme />
       <button
         class="px-scale-4 hover:underline transform scale-100 hover:scale-110"
-        on:click={() => ( console.log("theme clicked " + theme))}
+        on:click={() => ( theme = switchTheme)}
       >
          {#if switchTheme == 'light'}
             <svg class="svg svg-stroke" role="img" width="48" height="48" viewBox="0 0 24 24" aria-labelledby="sunIconTitle" stroke="yellow" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="yellow"> <title id="sunIconTitle">Sun</title> <circle cx="12" cy="12" r="4"/> <path d="M12 5L12 3M12 21L12 19M5 12L2 12 5 12zM22 12L19 12 22 12zM16.9497475 7.05025253L19.0710678 4.92893219 16.9497475 7.05025253zM4.92893219 19.0710678L7.05025253 16.9497475 4.92893219 19.0710678zM16.9497475 16.9497475L19.0710678 19.0710678 16.9497475 16.9497475zM4.92893219 4.92893219L7.05025253 7.05025253 4.92893219 4.92893219z"/> </svg>
+            { switchTheme } mode
          {:else if switchTheme == 'dark'}
             <svg class="svg svg-stroke" role="img" width="48" height="48" viewBox="0 0 24 24" aria-labelledby="moonIconTitle" stroke="yellow" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="yellow"> <title id="moonIconTitle">Moon</title> <path d="M10.423839,3 C10.1490474,3.80837289 10,4.67486099 10,5.57616098 C10,9.99443898 13.581722,13.576161 18,13.576161 C18.9013,13.576161 19.7677881,13.4271135 20.576161,13.152322 C19.5038921,16.3066875 16.516978,18.576161 13,18.576161 C8.581722,18.576161 5,14.994439 5,10.576161 C5,7.05918297 7.26947343,4.07226889 10.423839,3 Z"/> </svg>
+            { switchTheme } mode
          {:else}
             { switchTheme } mode
          {/if}
