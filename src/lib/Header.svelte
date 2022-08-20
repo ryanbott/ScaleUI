@@ -9,24 +9,24 @@
     console.log("theme-mode is: ", localStorage.getItem('theme-mode'));
 
     if(localStorage.getItem('theme-mode') === 'dark') {
-      document.body.classList.add("dark");
+      document.documentElement.classList.add("dark");
       themeIcon = 'dark';
 
     } else {
-      document.body.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
       themeIcon = 'light';
     }
   });
 
   function toggleTheme() {
-    console.log("theme was: ", document.body.classList);
+    console.log("theme was: ", document.documentElement.classList);
 
-    if (document.body.classList.contains("dark")) {
-      document.body.classList.remove("dark");
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
       localStorage.removeItem('theme-mode', 'dark');
       themeIcon = 'light';
     } else {
-      document.body.classList.add("dark");
+      document.documentElement.classList.add("dark");
       localStorage.setItem('theme-mode', 'dark');
       themeIcon = 'dark';
     }
@@ -34,7 +34,7 @@
 	}
 
   // $: switchTheme === "dark" ? "light" : "dark";
-  // $: document.body.className = theme;
+  // $: document.documentElement.className = theme;
 
 
 </script>

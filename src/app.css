@@ -48,7 +48,7 @@
   --accent-2: var(--light-pink);
 }
 
-body.dark {
+.dark {
   --bg-1: var(--dark);
   --bg-2: var(--mid-dark);
   --bg-3: var(--dark-blue);

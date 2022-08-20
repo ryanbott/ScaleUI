@@ -190,6 +190,15 @@ theme: {
     class="content"
     style="{styleProps}"
   >
+
+  <div class="container max-auto text-center px-scale-4 mb-scale-4 md:mb-scale-9">
+    <h1 class="text-scale-7 mb-scale-2"><span class="font-bold clip-text dark:from-purple-400 dark:to-rose-400">ScaleUI</span> is a modular (and fluid) type scale system for Typography and Layouts.</h1>
+    <p class="text-scale-5 mb-scale-1">More of an opinionated idealogy than a framework.</p>
+    <p class="text-scale-5">Build out and Scale up your Layout and Typography system fast and fluid</p>
+  </div>
+
+
+
     <div class="flex gap-8 flex-col px-scale-4 md:flex-row">
       <div class="flex flex-col">
         <label class="text-scale-3" for="baseLevel">
@@ -288,9 +297,9 @@ theme: {
     </button>
 
 
-    <ul class="fonts-results">
+    <ul class="fonts-results px-scale-3">
       {#each scaleValueArray as {rem, px, multiplier, scaleLevel}, i }
-        <li key={i} class="{multiplier == 0 ? 'bg-first' : '' }" style="font-size: {rem}rem">Test Heading {scaleLevel}: {rem}rem / {px}px</li>
+        <li key={i} class="{multiplier == 0 ? 'bg-first' : '' }" style="font-size: {rem}rem">Scale Heading {scaleLevel}: {rem}rem / {px}px</li>
       {/each}
       {#each fluidValueArray as {prop, value}, i }
         <li key={i} class="" style="font-size: {value}">Fluid Heading --{prop}: {value}</li>
